@@ -10,11 +10,15 @@ export default function Home(props) {
         <div className='container home-page-container'>
 
             {
-                announcements.map((announcement) => {
+                announcements.length > 0 && announcements.map((announcement) => {
                     return <>
                         <AnnouncementCard key={announcement.id} {...announcement} isAdmin={true}/>
                     </>
                 })
+            }
+
+            {
+                announcements.length == 0 && <p className="text-center">empty announcements</p>
             }
 
         </div>
@@ -24,6 +28,7 @@ export default function Home(props) {
 
 export async function getServerSideProps(context) {
     const url = process.env.apiExternalRoute + 'announcements'
+    console.log("🚀 ~ file: index.js ~ line 27 ~ getServerSideProps ~ url", url)
     const token = process.env.TOKEN
     
     const response = await fetch(url, requestOptions('GET', {}, { token }))
