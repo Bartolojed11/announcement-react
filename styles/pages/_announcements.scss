@@ -1,0 +1,35 @@
+.announcement-home-page {
+  padding: 10rem;
+}
+
+.announcement-card {
+  margin-bottom: 3rem;
+
+  & > .card-body > .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  & > .card-footer >  .card-footer-content {
+    display: flex;
+    gap: .8rem;
+    justify-content: flex-end;
+  }
+}
+
+.announcement-view-page {
+    .announcement-view-container {
+        margin-top: 5rem;
+        width: 50%;
+    }
+}
+
+.announcement-edit-page {
+    & > .announcement-edit-container {
+        margin-top: 5rem;
+        width: 50%;
+    }
+}

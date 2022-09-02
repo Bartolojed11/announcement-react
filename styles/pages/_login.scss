@@ -1,0 +1,10 @@
+.login-page {
+    margin-top: 10rem;
+
+    & > .login-container {
+        max-width: 40%;
+        background-color: #fff;
+        border-radius: .8rem;
+        padding: 4rem;
+    }
+}
